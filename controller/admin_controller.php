@@ -9,7 +9,6 @@
 
 namespace david63\sitelogo\controller;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use phpbb\config\config;
 use phpbb\config\db_text;
 use phpbb\request\request;
