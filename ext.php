@@ -28,7 +28,7 @@ class ext extends base
 	* @access public
 	*/
 	public function is_enableable()
- 	{
+	{
 		// Requires phpBB 3.2.0 or newer.
 		$is_enableable = phpbb_version_compare(PHPBB_VERSION, '3.2.0', '>=');
 
@@ -47,5 +47,5 @@ class ext extends base
 		}
 
 		return $is_enableable;
- 	}
+	}
 }
