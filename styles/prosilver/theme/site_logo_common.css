@@ -1,0 +1,46 @@
+/**
+* site_logo_common.css
+**/
+
+#logo img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+#logo {
+    display: block !important;
+    box-sizing: border-box;
+}
+
+.headerbar{
+	width: auto;
+	background-size: contain;
+	background-color: transparent;
+}
+
+.sl-headerbar {
+	margin: 0 auto;
+	padding: 5px;
+	border-radius: 7px;
+	position: relative;
+	display: block;
+	max-width: 100%;
+}
+
+#sl-new-desc {
+	clear: left;
+	background-color:transparent !important;
+}
+
+#sl-new-desc h1 {
+	margin-top: 15px;
+	font-weight: bold;
+	font-size: 2em;
+}
+
+#sl-new-desc p {
+	line-height: 1.3em;
+	font-size: 1.1em;
+	margin-bottom: 1.5em;
+}
