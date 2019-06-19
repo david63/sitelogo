@@ -1,26 +1,25 @@
-{% include 'overall_header.html' %}
-{% include '@david63_sitelogo/head_panel.html' %}
+{% include '@' ~ NAMESPACE ~ '/head_panel.html' %}
 
 <form id="sitelogo" method="post" action="{{ U_ACTION }}">
 	<fieldset>
 		<legend>{{ lang('SITE_LOGO_OPTIONS') }}</legend>
 
 		<dl>
-			<dt><label for="site_logo_image">{{ lang('SITE_LOGO_IMAGE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_IMAGE_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_image">{{ lang('SITE_LOGO_IMAGE') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_LOGO_IMAGE_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox" name="site_logo_image" type="text" id="site_logo_image" value="{{ SITE_LOGO_IMAGE }}" size="40" maxlength="255" validate="string" />
 			</dd>
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_width">{{ lang('SITE_LOGO_WIDTH') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_WIDTH_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_width">{{ lang('SITE_LOGO_WIDTH') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_LOGO_WIDTH_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox" name="site_logo_width" type="text" id="site_logo_width" value="{{ SITE_LOGO_WIDTH }}" size="4" maxlength="4" validate="string" /> {{ lang('PIXELS') }}
 			</dd>
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_height">{{ lang('SITE_LOGO_HEIGHT') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_HEIGHT_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_height">{{ lang('SITE_LOGO_HEIGHT') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_LOGO_HEIGHT_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox" name="site_logo_height" type="text" id="site_logo_height" value="{{ SITE_LOGO_HEIGHT }}" size="4" maxlength="4" validate="string" /> {{ lang('PIXELS') }}
 			</dd>
@@ -28,14 +27,14 @@
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_pixels">{{ lang('SITE_LOGO_PIXELS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_PIXELS_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_pixels">{{ lang('SITE_LOGO_PIXELS') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_LOGO_PIXELS_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox" name="site_logo_pixels" type="number" id="site_logo_pixels" value="{{ SITE_LOGO_PIXELS }}" min="0" max="99" /> {{ lang('PIXELS') }}
 			</dd>
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_left">{{ lang('SITE_LOGO_LEFT') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_LEFT_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_left">{{ lang('SITE_LOGO_LEFT') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_LOGO_LEFT_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_left1" name="site_logo_left" value="1"{% if SITE_LOGO_LEFT %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_left1">{{ lang('YES') }}</label>
@@ -45,7 +44,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_right">{{ lang('SITE_LOGO_RIGHT') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_RIGHT_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_right">{{ lang('SITE_LOGO_RIGHT') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_LOGO_RIGHT_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_right1" name="site_logo_right" value="1"{% if SITE_LOGO_RIGHT %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_right1">{{ lang('YES') }}</label>
@@ -55,7 +54,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_responsive">{{ lang('SITE_LOGO_RESPONSIVE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_RESPONSIVE_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_responsive">{{ lang('SITE_LOGO_RESPONSIVE') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_LOGO_RESPONSIVE_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_responsive1" name="site_logo_responsive" value="1"{% if SITE_LOGO_RESPONSIVE %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_responsive1">{{ lang('YES') }}</label>
@@ -75,7 +74,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_remove">{{ lang('SITE_LOGO_REMOVE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_REMOVE_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_remove">{{ lang('SITE_LOGO_REMOVE') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_LOGO_REMOVE_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_remove1" name="site_logo_remove" value="1"{% if SITE_LOGO_REMOVE %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_remove1">{{ lang('YES') }}</label>
@@ -85,7 +84,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_logo_url">{{ lang('SITE_LOGO_URL') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_URL_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_logo_url">{{ lang('SITE_LOGO_URL') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_LOGO_URL_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox" name="site_logo_logo_url" type="text" id="site_logo_logo_url" value="{{ SITE_LOGO_URL }}" size="40" maxlength="255" validate="string" />
 			</dd>
@@ -96,7 +95,7 @@
 		<legend>{{ lang('HEADER_OPTIONS') }}</legend>
 
 		<dl>
-			<dt><label for="site_logo_remove_header">{{ lang('REMOVE_HEADER_BAR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REMOVE_HEADER_BAR_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_remove_header">{{ lang('REMOVE_HEADER_BAR') }}{{ lang('COLON') }}</label><br><span>{{ lang('REMOVE_HEADER_BAR_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_remove_header1" name="site_logo_remove_header" value="1"{% if REMOVE_HEADER_BAR %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_remove_header1">{{ lang('YES') }}</label>
@@ -106,7 +105,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_header">{{ lang('USE_HEADER_COLOURS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('USE_HEADER_COLOURS_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_header">{{ lang('USE_HEADER_COLOURS') }}{{ lang('COLON') }}</label><br><span>{{ lang('USE_HEADER_COLOURS_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_header1" name="site_logo_header" value="1"{% if USE_HEADER_COLOURS %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_header1">{{ lang('YES') }}</label>
@@ -116,14 +115,14 @@
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_header_colour">{{ lang('HEADER_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('HEADER_COLOUR_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_header_colour">{{ lang('HEADER_COLOUR') }}{{ lang('COLON') }}</label><br><span>{{ lang('HEADER_COLOUR_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox2 jscolor {hash:true, uppercase:false}" name="site_logo_header_colour" type="text" id="site_logo_header_colour" value="{{ HEADER_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}
 			</dd>
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_header_solid">{{ lang('USE_SOLID_HEADER_COLOURS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('USE_SOLID_HEADER_COLOURS_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_header_solid">{{ lang('USE_SOLID_HEADER_COLOURS') }}{{ lang('COLON') }}</label><br><span>{{ lang('USE_SOLID_HEADER_COLOURS_EXPLAIN') }}</span></dt>
 
 
 			<dd>
@@ -139,7 +138,7 @@
 		<legend>{{ lang('SEARCH_OPTIONS') }}</legend>
 
 		<dl>
-			<dt><label for="site_logo_move_search">{{ lang('SITE_SEARCH_IN_NAVBAR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_SEARCH_IN_NAVBAR_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_move_search">{{ lang('SITE_SEARCH_IN_NAVBAR') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_SEARCH_IN_NAVBAR_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_move_search1" name="site_logo_move_search" value="1"{% if SEARCH_TO_NAVBAR %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_move_search1">{{ lang('YES') }}</label>
@@ -149,7 +148,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="site_search_remove">{{ lang('SITE_SEARCH_REMOVE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_SEARCH_REMOVE_EXPLAIN') }}</span></dt>
+			<dt><label for="site_search_remove">{{ lang('SITE_SEARCH_REMOVE') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_SEARCH_REMOVE_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_search_remove1" name="site_search_remove" value="1"{% if SITE_SEARCH_REMOVE %} checked="checked"{% endif %} />
 				<label class="set" for="site_search_remove1">{{ lang('YES') }}</label>
@@ -163,7 +162,7 @@
 		<legend>{{ lang('BANNER_OPTIONS') }}</legend>
 
 		<dl>
-			<dt><label for="site_logo_use_banner">{{ lang('USE_BANNER') }}{{ lang('COLON') }}</label><br /><span>{{ lang('USE_BANNER_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_use_banner">{{ lang('USE_BANNER') }}{{ lang('COLON') }}</label><br><span>{{ lang('USE_BANNER_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_use_banner1" name="site_logo_use_banner" value="1"{% if USE_BANNER %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_use_banner1">{{ lang('YES') }}</label>
@@ -173,21 +172,21 @@
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_banner_url">{{ lang('SITE_LOGO_BANNER_IMAGE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_LOGO_BANNER_IMAGE_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_banner_url">{{ lang('SITE_LOGO_BANNER_IMAGE') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_LOGO_BANNER_IMAGE_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox" name="site_logo_banner_url" type="text" id="site_logo_banner_url" value="{{ BANNER_URL }}" size="40" maxlength="255" validate="string" />
 			</dd>
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_banner_height">{{ lang('BANNER_HEIGHT') }}{{ lang('COLON') }}</label><br /><span>{{ lang('BANNER_HEIGHT_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_banner_height">{{ lang('BANNER_HEIGHT') }}{{ lang('COLON') }}</label><br><span>{{ lang('BANNER_HEIGHT_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox" name="site_logo_banner_height" type="text" id="site_logo_banner_height" value="{{ BANNER_HEIGHT }}" size="4" maxlength="4" validate="string" /> {{ lang('PIXELS') }}
 			</dd>
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_banner_radius">{{ lang('BANNER_RADIUS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('BANNER_RADIUS_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_banner_radius">{{ lang('BANNER_RADIUS') }}{{ lang('COLON') }}</label><br><span>{{ lang('BANNER_RADIUS_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox" name="site_logo_banner_radius" type="number" id="site_logo_banner_radius" value="{{ BANNER_RADIUS }}" min="0" max="99" /> {{ lang('PIXELS') }}
 			</dd>
@@ -198,7 +197,7 @@
 		<legend>{{ lang('TEXT_OPTIONS') }}</legend>
 
 		<dl>
-			<dt><label for="site_logo_site_name_below">{{ lang('SITE_NAME_BELOW') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_NAME_BELOW_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_site_name_below">{{ lang('SITE_NAME_BELOW') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_NAME_BELOW_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_site_name_below1" name="site_logo_site_name_below" value="1"{% if SITE_NAME_BELOW %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_site_name_below1">{{ lang('YES') }}</label>
@@ -208,7 +207,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_use_override_colour">{{ lang('USE_OVERRIDE_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('USE_OVERRIDE_COLOUR_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_use_override_colour">{{ lang('USE_OVERRIDE_COLOUR') }}{{ lang('COLON') }}</label><br><span>{{ lang('USE_OVERRIDE_COLOUR_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_use_override_colour1" name="site_logo_use_override_colour" value="1"{% if USE_OVERRIDE_COLOUR %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_use_override_colour1">{{ lang('YES') }}</label>
@@ -218,14 +217,14 @@
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_override_colour">{{ lang('OVERRIDE_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('OVERRIDE_COLOUR_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_override_colour">{{ lang('OVERRIDE_COLOUR') }}{{ lang('COLON') }}</label><br><span>{{ lang('OVERRIDE_COLOUR_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox2 jscolor {hash:true, uppercase:false}" name="site_logo_override_colour" type="text" id="site_logo_override_colour" value="{{ OVERRIDE_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}
 			</dd>
 		</dl>
 
 		<dl>
-			<dt><label for="site_name_supress">{{ lang('SITE_NAME_SUPRESS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_NAME_SUPRESS_EXPLAIN') }}</span></dt>
+			<dt><label for="site_name_supress">{{ lang('SITE_NAME_SUPRESS') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_NAME_SUPRESS_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_name_supress1" name="site_name_supress" value="1"{% if SITE_NAME_SUPRESS %} checked="checked"{% endif %} />
 				<label class="set" for="site_name_supress1">{{ lang('YES') }}</label>
@@ -239,7 +238,7 @@
 		<legend>{{ lang('EXTENDED_SITE_DESCRIPTION') }}</legend>
 
 		<dl>
-			<dt><label for="site_logo_use_extended_desc">{{ lang('USE_EXTENED_SITE_DESC') }}{{ lang('COLON') }}</label><br /><span>{{ lang('USE_EXTENED_SITE_DESC_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_use_extended_desc">{{ lang('USE_EXTENED_SITE_DESC') }}{{ lang('COLON') }}</label><br><span>{{ lang('USE_EXTENED_SITE_DESC_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_use_extended_desc1" name="site_logo_use_extended_desc" value="1"{% if EXTENED_SITE_DESC %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_use_extended_desc1">{{ lang('YES') }}</label>
@@ -249,7 +248,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="extended_site_description">{{ lang('EXTENDED_SITE_DESCRIPTION') }}{{ lang('COLON') }}</label><br /><span>{{ lang('EXTENDED_SITE_DESCRIPTION_EXPLAIN') }}</span></dt>
+			<dt><label for="extended_site_description">{{ lang('EXTENDED_SITE_DESCRIPTION') }}{{ lang('COLON') }}</label><br><span>{{ lang('EXTENDED_SITE_DESCRIPTION_EXPLAIN') }}</span></dt>
 			<dd>
 				<textarea class="textbox" name="site_logo_extended_site_description" id="site_logo_extended_site_description" rows="3" cols="45">{{ EXTENED_SITE_DESCRIPTION }}</textarea>
 			</dd>
@@ -260,7 +259,7 @@
 		<legend>{{ lang('SITE_BACKGROUND') }}</legend>
 
 		<dl>
-			<dt><label for="site_logo_use_background">{{ lang('USE_SITE_BACKGROUND') }}{{ lang('COLON') }}</label><br /><span>{{ lang('USE_SITE_BACKGROUND_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_use_background">{{ lang('USE_SITE_BACKGROUND') }}{{ lang('COLON') }}</label><br><span>{{ lang('USE_SITE_BACKGROUND_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_use_background1" name="site_logo_use_background" value="1"{% if USE_SITE_BACKGROUND %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_use_background1">{{ lang('YES') }}</label>
@@ -270,14 +269,14 @@
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_background_image">{{ lang('SITE_BACKGROUND_IMAGE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SITE_BACKGROUND_IMAGE_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_background_image">{{ lang('SITE_BACKGROUND_IMAGE') }}{{ lang('COLON') }}</label><br><span>{{ lang('SITE_BACKGROUND_IMAGE_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox" name="site_logo_background_image" type="text" id="site_logo_background_image" value="{{ SITE_BACKGROUND_IMAGE }}" size="40" maxlength="255" validate="string" />
 			</dd>
 		</dl>
 
 		<dl>
-			<dt><label for="site_logo_background_repeat">{{ lang('REPEAT_BACKGROUND') }}{{ lang('COLON') }}</label><br /><span>{{ lang('REPEAT_BACKGROUND_EXPLAIN') }}</span></dt>
+			<dt><label for="site_logo_background_repeat">{{ lang('REPEAT_BACKGROUND') }}{{ lang('COLON') }}</label><br><span>{{ lang('REPEAT_BACKGROUND_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="site_logo_background_repeat1" name="site_logo_background_repeat" value="1"{% if REPEAT_BACKGROUND %} checked="checked"{% endif %} />
 				<label class="set" for="site_logo_background_repeat1">{{ lang('YES') }}</label>
@@ -297,7 +296,5 @@
 	</fieldset>
 </form>
 
-{% INCLUDEJS '@david63_sitelogo/jscolor.js' %}
-
-{% include '@david63_sitelogo/donate.html' %}
-{% include 'overall_footer.html' %}
+{% INCLUDEJS '@' ~ NAMESPACE ~ '/jscolor.js' %}
+{% include '@' ~ NAMESPACE ~ '/donate.html' %}

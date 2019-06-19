@@ -16,7 +16,7 @@ use phpbb\template\template;
 use phpbb\user;
 use phpbb\log\log;
 use phpbb\language\language;
-use david63\sitelogo\ext;
+use david63\sitelogo\core\functions;
 
 /**
 * Admin controller
@@ -44,24 +44,32 @@ class admin_controller implements admin_interface
 	/** @var \phpbb\language\language */
 	protected $language;
 
+	/** @var \david63\sitelogo\core\functions */
+	protected $functions;
+
+	/** @var string custom constants */
+	protected $slconstants;
+
 	/** @var string Custom form action */
 	protected $u_action;
 
 	/**
 	* Constructor for admin controller
 	*
-	* @param \phpbb\config\config		$config			Config object
-	* @param \phpbb\config\db_text		$config_text	Config text object
-	* @param \phpbb\request\request		$request		Request object
-	* @param \phpbb\template\template	$template		Template object
-	* @param \phpbb\user				$user			User object
-	* @param \phpbb\log\log				$log			Log object
-	* @param \phpbb\language\language	$language		Language object
+	* @param \phpbb\config\config				$config			Config object
+	* @param \phpbb\config\db_text				$config_text	Config text object
+	* @param \phpbb\request\request				$request		Request object
+	* @param \phpbb\template\template			$template		Template object
+	* @param \phpbb\user						$user			User object
+	* @param \phpbb\log\log						$log			Log object
+	* @param \phpbb\language\language			$language		Language object
+	* @param \david63\sitelogo\core\functions	$functions		Functions for the extension
+	* @param array	                            $slconstants	Constants
 	*
 	* @return \david63\sitelogo\controller\admin_controller
 	* @access public
 	*/
-	public function __construct(config $config, db_text $config_text, request $request, template $template, user $user, log $log, language $language)
+	public function __construct(config $config, db_text $config_text, request $request, template $template, user $user, log $log, language $language, functions $functions, $slconstants)
 	{
 		$this->config		= $config;
 		$this->config_text 	= $config_text;
@@ -70,6 +78,8 @@ class admin_controller implements admin_interface
 		$this->user			= $user;
 		$this->log			= $log;
 		$this->language		= $language;
+		$this->functions	= $functions;
+		$this->constants	= $slconstants;
 	}
 
 	/**
@@ -84,14 +94,15 @@ class admin_controller implements admin_interface
 		$this->language->add_lang('acp_sitelogo', 'david63/sitelogo');
 
 		// Create a form key for preventing CSRF attacks
-		$form_key = 'sitelogo';
-		add_form_key($form_key);
+		add_form_key($this->constants['form_key']);
+
+		$back = false;
 
 		// Is the form being submitted
 		if ($this->request->is_set_post('submit'))
 		{
 			// Is the submitted form is valid
-			if (!check_form_key($form_key))
+			if (!check_form_key($this->constants['form_key']))
 			{
 				trigger_error($this->language->lang('FORM_INVALID') . adm_back_link($this->u_action), E_USER_WARNING);
 			}
@@ -112,9 +123,9 @@ class admin_controller implements admin_interface
 		// Positions
 		$positions = array();
 
-		$positions[ext::LOGO_POSITION_LEFT] 	= $this->language->lang('LOGO_LEFT');
-		$positions[ext::LOGO_POSITION_CENTER]	= $this->language->lang('LOGO_CENTRE');
-		$positions[ext::LOGO_POSITION_RIGHT] 	= $this->language->lang('LOGO_RIGHT');
+		$positions[$this->constants['logo_position_left']] 	= $this->language->lang('LOGO_LEFT');
+		$positions[$this->constants['logo_position_center']]	= $this->language->lang('LOGO_CENTRE');
+		$positions[$this->constants['logo_position_right']] 	= $this->language->lang('LOGO_RIGHT');
 
 		foreach ($positions as $value => $label)
 		{
@@ -132,7 +143,12 @@ class admin_controller implements admin_interface
 			'HEAD_TITLE'		=> $this->language->lang('SITE_LOGO'),
 			'HEAD_DESCRIPTION'	=> $this->language->lang('SITE_LOGO_EXPLAIN'),
 
-			'VERSION_NUMBER'	=> ext::SITE_LOGO_VERSION,
+			'NAMESPACE'			=> $this->functions->get_ext_namespace('twig'),
+
+			'S_BACK'			=> $back,
+			'S_VERSION_CHECK'	=> $this->functions->version_check(),
+
+			'VERSION_NUMBER'	=> $this->functions->get_this_version(),
 		));
 
 		$this->template->assign_vars(array(

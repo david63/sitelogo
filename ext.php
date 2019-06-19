@@ -13,12 +13,6 @@ use phpbb\extension\base;
 
 class ext extends base
 {
-	const SITE_LOGO_VERSION	= '2.1.0 RC6';
-
-	const LOGO_POSITION_LEFT	= 0;
-	const LOGO_POSITION_CENTER	= 1;
-	const LOGO_POSITION_RIGHT	= 2;
-
 	/**
 	* Enable extension if phpBB version requirement is met
 	*

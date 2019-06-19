@@ -13,11 +13,11 @@ namespace david63\sitelogo\event;
 * @ignore
 */
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
 use phpbb\config\config;
 use phpbb\config\db_text;
 use phpbb\template\template;
 use phpbb\user;
-use david63\sitelogo\ext;
 
 /**
 * Event listener
@@ -39,6 +39,9 @@ class listener implements EventSubscriberInterface
 	/** @var string phpBB root path */
 	protected $root_path;
 
+	/** @var string custom constants */
+	protected $slconstants;
+
 	/**
 	* Constructor for listener
 	*
@@ -47,16 +50,18 @@ class listener implements EventSubscriberInterface
 	* @param \phpbb\template\template	$template		phpBB template
 	* @param \phpbb\user				$user			User object
 	* @param string 					$root_path		phpBB root path
+	* @param array						$slconstants	Constants
 	*
 	* @access public
 	*/
-	public function __construct(config $config, db_text $config_text, template $template, user $user, $root_path)
+	public function __construct(config $config, db_text $config_text, template $template, user $user, $root_path, $slconstants)
 	{
 		$this->config		= $config;
 		$this->config_text 	= $config_text;
 		$this->template		= $template;
 		$this->user			= $user;
 		$this->root_path	= $root_path;
+		$this->constants	= $slconstants;
 	}
 
 	/**
@@ -124,14 +129,14 @@ class listener implements EventSubscriberInterface
 			'SITE_DESCRIPTION'		=> $this->config['site_desc'],
 			'SITE_LOGO_BACKGROUND'	=> $this->set_site_logo_url($this->config['site_logo_background_image']),
 			'SITE_LOGO_BANNER'		=> $this->set_site_logo_url($this->config['site_logo_banner_url']),
-			'SITE_LOGO_CENTRE'		=> ($this->config['site_logo_position'] == ext::LOGO_POSITION_CENTER) ? true : false,
+			'SITE_LOGO_CENTRE'		=> ($this->config['site_logo_position'] == $this->constants['logo_position_center']) ? true : false,
 			'SITE_LOGO_DESCRIPTION'	=> $this->config['site_desc'],
 			'SITE_LOGO_IMG'			=> $site_logo_img,
 			'SITE_LOGO_IMG_NEW'		=> $site_logo_img_new,
 			'SITE_LOGO_LOGO_URL'	=> $this->set_site_logo_url($this->config['site_logo_logo_url']),
 			'SITE_LOGO_REMOVE'		=> $this->config['site_logo_remove'],
 			'SITE_LOGO_RESPONSIVE'	=> $this->config['site_logo_responsive'],
-			'SITE_LOGO_RIGHT'		=> ($this->config['site_logo_position'] == ext::LOGO_POSITION_RIGHT) ? true : false,
+			'SITE_LOGO_RIGHT'		=> ($this->config['site_logo_position'] == $this->constants['logo_position_right']) ? true : false,
 			'SITE_LOGO_SITENAME'	=> $this->config['sitename'],
 			'SITE_NAME_BELOW'		=> $this->config['site_logo_site_name_below'],
 			'SITENAME_SUPRESS'		=> ($this->config['site_name_supress'] || $this->config['site_logo_site_name_below']) ? true : false,
