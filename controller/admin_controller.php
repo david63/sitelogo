@@ -90,8 +90,9 @@ class admin_controller implements admin_interface
 	*/
 	public function display_options()
 	{
-		// Add the language file
+		// Add the language files
 		$this->language->add_lang('acp_sitelogo', 'david63/sitelogo');
+		$this->language->add_lang('acp_common', 'david63/sitelogo');
 
 		// Create a form key for preventing CSRF attacks
 		add_form_key($this->constants['form_key']);
@@ -139,16 +140,20 @@ class admin_controller implements admin_interface
 		$extended_site_description_data = $this->config_text->get_array(array('site_logo_extended_site_description'));
 
 		// Template vars for header panel
+		$version_data	= $this->functions->version_check();
+
 		$this->template->assign_vars(array(
+			'DOWNLOAD'			=> (array_key_exists('download', $version_data)) ? '<a href =' . $version_data['download'] . '>' . $this->language->lang('NEW_VERSION_LINK') . '</a>' : '',
+
 			'HEAD_TITLE'		=> $this->language->lang('SITE_LOGO'),
 			'HEAD_DESCRIPTION'	=> $this->language->lang('SITE_LOGO_EXPLAIN'),
 
 			'NAMESPACE'			=> $this->functions->get_ext_namespace('twig'),
 
 			'S_BACK'			=> $back,
-			'S_VERSION_CHECK'	=> $this->functions->version_check(),
+			'S_VERSION_CHECK'	=> (array_key_exists('current', $version_data)) ? $version_data['current'] : false,
 
-			'VERSION_NUMBER'	=> $this->functions->get_this_version(),
+			'VERSION_NUMBER'	=> $this->functions->get_meta('version'),
 		));
 
 		$this->template->assign_vars(array(

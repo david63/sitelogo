@@ -58,9 +58,6 @@ $lang = array_merge($lang, array(
 	'LOGO_LEFT'							=> 'Left',
 	'LOGO_RIGHT'						=> 'Right',
 
-	'NEW_VERSION'						=> 'New Version',
-	'NEW_VERSION_EXPLAIN'				=> 'There is a newer version of this extension available.',
-
 	'OVERRIDE_COLOUR'					=> 'Override colour',
 	'OVERRIDE_COLOUR_EXPLAIN'			=> 'Select a colour for the Site Name and Site Description that will replace the colour defined in the style.',
 
@@ -122,14 +119,4 @@ $lang = array_merge($lang, array(
 	'USE_OVERRIDE_COLOUR_EXPLAIN'		=> 'Allow the override colour to be used for the Site Name and Site Description.',
 	'USE_SITE_BACKGROUND'				=> 'Use a site background',
 	'USE_SITE_BACKGROUND_EXPLAIN'		=> 'Add a picture to become the background of your board.',
-));
-
-// Donate
-$lang = array_merge($lang, array(
-	'DONATE'					=> 'Donate',
-	'DONATE_EXTENSIONS'			=> 'Donate to my extensions',
-	'DONATE_EXTENSIONS_EXPLAIN'	=> 'This extension, as with all of my extensions, is totally free of charge. If you have benefited from using it then please consider making a donation by clicking the PayPal donation button opposite - I would appreciate it. I promise that there will be no spam nor requests for further donations, although they would always be welcome.',
-
-	'PAYPAL_BUTTON'				=> 'Donate with PayPal button',
-	'PAYPAL_TITLE'				=> 'PayPal - The safer, easier way to pay online!',
 ));

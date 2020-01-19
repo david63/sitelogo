@@ -7,6 +7,7 @@ Adds a link to a credits page showing extension credits.
 [![Latest Stable Version](https://poser.pugx.org/david63/creditspage/v/stable)](https://packagist.org/packages/david63/creditspage)
 [![Latest Unstable Version](https://poser.pugx.org/david63/creditspage/v/unstable)](https://packagist.org/packages/david63/creditspage)
 [![Total Downloads](https://poser.pugx.org/david63/creditspage/downloads)](https://packagist.org/packages/david63/creditspage)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ad837dca31ac4026b9907e06cb37f045)](https://www.codacy.com/manual/david63/sitelogo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=david63/sitelogo&amp;utm_campaign=Badge_Grade)
 
 ![Screenshot](credit_page_user.jpg)
 ![Screenshot](credits_page_admin.jpg)
