@@ -29,6 +29,9 @@ services:
         arguments:
             - '@ext.manager'
 
+    _defaults:
+        public: true
+
 parameters:
     slconstants:
         form_key: 'sitelogo'

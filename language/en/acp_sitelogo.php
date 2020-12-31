@@ -3,7 +3,7 @@
 *
 * @package Site Logo Extension
 * @copyright (c) 2014 david63
-* * @license GNU General Public License, version 2 (GPL-2.0)
+* @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 
@@ -17,7 +17,7 @@ if (!defined('IN_PHPBB'))
 
 if (empty($lang) || !is_array($lang))
 {
-	$lang = array();
+	$lang = [];
 }
 
 // DEVELOPERS PLEASE NOTE
